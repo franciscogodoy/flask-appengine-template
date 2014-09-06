@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class="container">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1>Search your network!</h1>
+      <p>Enter a name, a company or a position and let us show you how to get there</p>
+      <!-- Search input -->
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-8 -->
+      </div><!-- /.row -->
+
+    </div> <!-- jumbotron -->
+
+  </div><!-- /.container -->
+
+  <!-- how thumbnails will show up -->
+  <div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src={{ url_for('static', filename='img/test.jpg') }} alt="testimage">
+        </a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+

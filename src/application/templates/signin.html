@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{%block head%}
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/signin.css') }}">
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/bootstrap-social.css') }}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    {% if error %}
+    <div class="form-group has-error">
+      <p><strong>Error:</strong> {{ error }}</p>
+    </div>
+    {% endif %}
+    <form class="form-signin" role="form">
+      <h2 class="form-signin-heading">Please sign in</h2>
+      <input type="email" class="form-control" placeholder="Email address" required autofocus>
+      <input type="password" class="form-control" placeholder="Password" required>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+      <h2 class="text-center">-- Or --</h2>
+        <a class="btn btn-block btn-sm btn-social btn-facebook">
+          <i class="fa fa-facebook"></i> Sign in with Facebook
+        </a>
+        <a class="btn btn-block btn-sm btn-social btn-linkedin" href="{{ url_for('login_linkedin') }}">
+          <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+        </a>
+        <a class="btn btn-block btn-sm btn-social btn-google">
+          <i class="fa fa-google-plus"></i> Sign in with Google
+        </a>
+      </div>
+    </div>
+  </div> <!-- /container -->
+{% endblock %}
+
+
