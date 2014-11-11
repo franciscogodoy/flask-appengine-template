@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <!--<img src="/img/{ filename }" alt="testimage"> --!>
+      {% for i in range(ids) %}
+        <img src={{ url_for('show', filename=filename, ids=i) }} alt="testimage">
+      {% endfor %}
+    </a>
+  </div>
+
+</div><!-- /.container -->
+
+{% endblock %}
+

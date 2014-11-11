@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{%block head%}
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/signin.css') }}">
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/bootstrap-social.css') }}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+  <div class="container">
+    {% if error %}
+    <div class="form-group has-error">
+      <p><strong>Error:</strong>{{ error }}</p>
+    </div>
+    {% endif %}
+    <form class="form-signin" role="form" name="test_upload" method="post" enctype="multipart/form-data" action="/testupload">
+      <!-- form.hidden_tag() only flask_wtf has it not wtform--!>
+      <div class="form-group">
+        {{ form.name(class_="form-control", placeholder="Product Name") }}
+        {% for error in form.name.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        <!--<input type="product-name" class="form-control" placeholder="Product name" required>--!>
+      </div>
+      <div class="form-group">
+        <label for="photo1">Upload Picture</label>
+        <!-- <input type="file" name="photo1" id="photo1"> --!>
+        {{ form.picture(type_="file", name_="file") }}
+        {% for error in form.picture.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Upload">Upload</button>
+    </form>
+  </div><!-- /.container -->
+{% endblock %}
+

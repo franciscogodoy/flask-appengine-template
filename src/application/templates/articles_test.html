@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  {% if allproducts %}
+  {% for item in allproducts %}
+  <div class="jumbotron">
+    <!-- how thumbnails will show up -->
+    <table class="table">
+      <tbody>
+        <th> Article for sale {{ item.product_name }}</th>
+        <tr>
+          <td>
+            <div class="row">
+              <div class = "col-sm-9"> <!-- for nested elements -->
+                <div class="row">
+                  <div class ="col-sm-9">
+                     <!-- each picture shows up in this element of class thumbnail -->
+                    {% for i in range(item.picture_count|int) %}
+                    <div class="col-xs-6 col-md-3">
+                      <a href="#" class="thumbnail">
+                        <img src={{ url_for('show', filename=item.product_name, ids=i) }} alt="testimage">
+                      </a>
+                    </div>
+                   {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>contact info</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div> <!-- jumbotron -->
+  {% endfor %}
+  {% endif %}
+</div><!-- /.container -->
+
+{% endblock %}
+
