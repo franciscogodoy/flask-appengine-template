@@ -15,14 +15,34 @@ import views
 # See http://code.google.com/appengine/docs/python/config/appconfig.html#Warming_Requests
 app.add_url_rule('/_ah/warmup', 'warmup', view_func=views.warmup)
 
-# Home page
-app.add_url_rule('/', 'home', view_func=views.home)
+# Buy page
+app.add_url_rule('/', 'buy', view_func=views.buy)
+app.add_url_rule('/buy', view_func=views.buy)
+
+# Sell page
+app.add_url_rule('/sell', "sell", view_func=views.upload_product, methods=["GET", "POST"])
+
+# Rent-owners page
+app.add_url_rule('/rent-owner', "rent owner", view_func=views.upload_product, methods=["GET", "POST"])
+
+# Rent page
+app.add_url_rule('/rent', "rent", view_func=views.rent)
 
 # Login page
 app.add_url_rule('/login', 'login', view_func=views.login, methods=["GET", "POST"])
 
+# URLs for images
+app.add_url_rule('/img/<filename>/<ids>', 'show', view_func=views.show)
+
+# Test show picture page
+app.add_url_rule('/photo/<filename>', 'photo_entry', view_func=views.photo)
+
 # Say hello
-#app.add_url_rule('/hello/<username>', 'say_hello', view_func=views.say_hello)
+app.add_url_rule('/hello/<username>', 'say_hello', view_func=views.say_hello)
+
+# testing form uploads of pictures
+app.add_url_rule('/testupload', 'test upload', view_func=views.test_upload, methods=["GET", "POST"])
+
 
 # Examples list page
 #app.add_url_rule('/examples', 'list_examples', view_func=views.list_examples, methods=['GET', 'POST'])

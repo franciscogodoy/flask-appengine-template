@@ -17,20 +17,47 @@
         </div><!-- /.col-lg-8 -->
       </div><!-- /.row -->
 
-    </div> <!-- jumbotron -->
-
-  </div><!-- /.container -->
 
   <!-- how thumbnails will show up -->
-  <div>
+  <table class="table">
+  <tbody>
+  <th> Article for sale </th>
+  <tr>
+   <td>
+   <div class="row"><div class = "col-sm-9">
     <div class="row">
+      <!-- each picture shows up in this element of class thumbnail -->
+      <div class ="col-sm-9">
       <div class="col-xs-6 col-md-3">
         <a href="#" class="thumbnail">
           <img src={{ url_for('static', filename='img/test.jpg') }} alt="testimage">
         </a>
       </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src={{ url_for('static', filename='img/test.jpg') }} alt="testimage">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src={{ url_for('static', filename='img/test.jpg') }} alt="testimage">
+        </a>
+      </div>
+
     </div>
-  </div>
+    </div>
+    </div></div>
+    </td>
+    </tr>
+    <tr>
+     <td>contact info</td>
+    </tr>
+    </tbody>
+    </table>
+
+    </div> <!-- jumbotron -->
+
+  </div><!-- /.container -->
 
 {% endblock %}
 

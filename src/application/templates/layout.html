@@ -27,13 +27,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Karinthy Chain</a>
+          <a class="navbar-brand" href="#">Buyaloh</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#buy">Buy</a></li>
-            <li><a href="#sell">Sell</a></li>
+            <li><a href="{{ url_for('buy') }}">Buy</a></li>
+            <li><a href="{{ url_for('sell') }}">Sell</a></li>
+            <li><a href="{{ url_for('rent') }}">Rent</a></li>
+            <li><a href="{{ url_for('rent owner') }}">Rent Owner</a></li>
           </ul>
           <div class="nav navbar-right">
           {% if not session.logged_in %}
